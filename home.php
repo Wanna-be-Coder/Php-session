@@ -1,3 +1,8 @@
+<?php
+session_start();
+if($_SESSION["username"] == null){header("location:index.php");}
+
+?>
 <!DOCTYPE html>
 <head>
 
@@ -10,6 +15,9 @@
 	
 	<a href="uinfo.php"><h3>user info</h3></a>
 	<a href="Iinfo.php"><h3>user login info</h3></a>
-	<button type="button" action="logout.php">Logout</button>
+	<form action="logout.php" method="GET">
+		<button type="submit" name="logout">Logout</button>
+	</form>
+	
 
 </body>
